@@ -82,7 +82,6 @@ export default defineConfig({
     }),
 
     // https://github.com/antfu/vite-plugin-md
-    // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
       headEnabled: true,
       markdownItSetup(md) {
@@ -121,8 +120,8 @@ export default defineConfig({
             purpose: 'any maskable',
           },
         ],
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'Catchaluk-tools',
+        short_name: 'Catchaluk-tools',
         theme_color: '#ffffff',
       },
       registerType: 'autoUpdate',

@@ -1,2 +1,2 @@
-# Rapide-et-furieux
-Rapide-et-furieux (Fast and furious) is an opinionated [Vue3](https://v3.vuejs.org/) + [Vite](https://vitejs.dev/) starter template, heavily based on [Vitesse](https://github.com/antfu/vitesse), [Vitesse-entreprise](https://github.com/FranciscoKloganB/vitesse-enterprise) and [Vuelix](https://github.com/helixsoftco/vuelix)
+# Catchaluk Tools
+Leveraging the [Rapide-et-furieux](https://github.com/FrancoisBosma/rapide-et-furieux) Vue3 + Vite starter template, this project aims at providing useful tools for the [Catchaluk](https://catchaluk.wixsite.com/lejdr) tabletop RPG universe.
