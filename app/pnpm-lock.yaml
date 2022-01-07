@@ -7,6 +7,7 @@ specifiers:
   '@cypress/vite-dev-server': ^2.2.2
   '@cypress/vue': ^2.2.3
   '@iconify-json/carbon': ^1.0.12
+  '@iconify-json/fontelico': ^1.0.1
   '@intlify/vite-plugin-vue-i18n': ^2.5.0
   '@types/markdown-it-link-attributes': ^3.0.1
   '@types/nprogress': ^0.2.0
@@ -91,6 +92,7 @@ devDependencies:
   '@cypress/vite-dev-server': 2.2.2_vite@2.7.9
   '@cypress/vue': 2.2.3_cypress@9.2.0+vue@3.2.26
   '@iconify-json/carbon': 1.0.12
+  '@iconify-json/fontelico': 1.0.1
   '@intlify/vite-plugin-vue-i18n': 2.5.0
   '@types/markdown-it-link-attributes': 3.0.1
   '@types/nprogress': 0.2.0
@@ -1671,6 +1673,12 @@ packages:
 
   /@iconify-json/carbon/1.0.12:
     resolution: {integrity: sha512-wqO/tnPis6BRxY9QP2Wqprfnb90dPr3O0LBkaG7e/nE5C7KySrLEweBoTn129muENM40wwHCJ6hqzXrmgfhH/A==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/fontelico/1.0.1:
+    resolution: {integrity: sha512-9MnQ9GVpg/6v5n1tqnldYiFXVc8lxqnxM7oSJdqK1wh+GgQcR2AKA631GnkNk6gCDSpqCk5l4MQMKNLKxgHF4Q==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: true

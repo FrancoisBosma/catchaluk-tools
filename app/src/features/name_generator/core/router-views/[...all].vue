@@ -1,5 +1,6 @@
 <route lang="yaml">
 meta:
+  public: true
   layout: 404Layout
 </route>
 

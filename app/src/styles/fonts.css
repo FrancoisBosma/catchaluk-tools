@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Zacoalt";
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Zacoalt"), url("/fonts/Zacoalt/Zacoalt.ttf") format("truetype");
+}
+* {
+  font-family: "Zacoalt", Avenir, Helvetica, Arial, sans-serif;
+}

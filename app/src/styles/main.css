@@ -1,4 +1,5 @@
 @import './markdown.css';
+@import './fonts.css';
 
 html,
 body,
@@ -10,6 +11,19 @@ body,
 
 html.dark {
   background: #121212;
+}
+
+h1 {
+  font-size: calc(1.5em + 8vw);
+  font-weight: normal;
+}
+h2 {
+  font-size: calc(1.5em + 3vw);
+  font-weight: normal;
+}
+h3 {
+  font-size: min(1.5em, calc(1em + 2vw));
+  font-weight: normal;
 }
 
 #nprogress {
