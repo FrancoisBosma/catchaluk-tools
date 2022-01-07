@@ -1,0 +1,39 @@
+{
+  "cSpell.words": [
+    "antfu",
+    "automagically",
+    "commitlint",
+    "iconify",
+    "intlify",
+    "loglevel",
+    "markdownlint",
+    "noopener",
+    "nprogress",
+    "pinia",
+    "pnpm",
+    "preinstall",
+    "reactified",
+    "stylelint",
+    "unplugin",
+    "vars",
+    "Vite",
+    "vitejs",
+    "Vitesse",
+    "vitest",
+    "vueuse",
+    "Windi",
+    "windicss"
+  ],
+  "cSpell.language": "en-GB",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.sortKeys": true,
+  "prettier.enable": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+}
