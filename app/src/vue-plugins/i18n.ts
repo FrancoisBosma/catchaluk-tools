@@ -1,7 +1,7 @@
 import type { UserModule } from '@SRC/types'
 import { createI18n } from 'vue-i18n'
 
-export const DEFAULT_LANGUAGE = 'en'
+export const DEFAULT_LANGUAGE = 'fr'
 export const BROWSER_LANGUAGE = navigator?.language?.split('-')[0]
 
 const messages = Object.fromEntries(

@@ -1,6 +1,24 @@
+<script setup lang="ts">
+  import smallBg from '@ASSETS/background_small_screens.jpg'
+  import largeBg from '@ASSETS/background_large_screens.png'
+  const urls = {
+    small: `url(${smallBg})`,
+    large: `url(${largeBg})`,
+  }
+</script>
+
 <template>
-  <main class="px-4 py-10 text-center text-gray-700 dark:text-gray-200">
+  <main w:bg="100%" w:h="full" w:p="y-4 sm:(x-[6.9vw])" w:text="center gray-700">
     <router-view />
-    <Footer />
   </main>
+  <Footer />
 </template>
+
+<style scoped>
+  main {
+    background-image: v-bind('urls.small');
+    @screen sm {
+      background-image: v-bind('urls.large');
+    }
+  }
+</style>
