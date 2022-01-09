@@ -24,6 +24,7 @@ h2 {
 h3 {
   font-size: min(1.5em, calc(1em + 2vw));
   font-weight: normal;
+  font-family: sans-serif;
   * {
     font-family: sans-serif;
   }
@@ -47,14 +48,26 @@ h3 {
 
 .btn {
   @apply px-4 py-1 rounded inline-block
-    bg-teal-600 text-white cursor-pointer
-    hover:bg-teal-700
+    bg-red-600 text-white cursor-pointer
+    hover:bg-red-700
     disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50;
 }
 
 .icon-btn {
   @apply inline-block cursor-pointer select-none
     opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-teal-600;
+    hover:opacity-100 hover:text-red-600;
   font-size: 0.9em;
+}
+
+.ext-link {
+  @apply inline-block cursor-pointer select-none
+  transition duration-200 ease-in-out
+  hover:(underline);
+}
+
+.ext-link-icon {
+  width: 12px;
+  color: #d41413;
+  margin-bottom: 5px;
 }

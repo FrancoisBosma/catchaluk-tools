@@ -5,17 +5,15 @@ meta:
 </route>
 
 <script setup lang="ts">
-  // const { t } = useI18n()
+  import Introduction from '../components/Introduction'
+  import NameGenerator from '../components/NameGenerator'
 </script>
 
 <template>
-  <div>
-    <p class="text-4xl">
-      <carbon-campsite class="inline-block" />
-    </p>
-    <p>
-      Rapide et furieux (<a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">Vitesse</a>
-      based)
-    </p>
-  </div>
+  <section w:m="x-[2vw]" w:p="b-4" w:border="b current">
+    <introduction />
+  </section>
+  <section>
+    <name-generator />
+  </section>
 </template>

@@ -4,9 +4,9 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CarbonCampsite: typeof import('~icons/carbon/campsite')['default']
     FontelicoEmoSunglasses: typeof import('~icons/fontelico/emo-sunglasses')['default']
     Footer: typeof import('./global/components/Footer.vue')['default']
+    UilExternalLinkAlt: typeof import('~icons/uil/external-link-alt')['default']
   }
 }
 
