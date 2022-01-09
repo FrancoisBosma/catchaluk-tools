@@ -8,4 +8,21 @@
 }
 * {
   font-family: "Zacoalt", Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1;
+}
+
+h3,
+h3 *,
+p {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: calc(1.5em + 8vw);
+}
+h2 {
+  font-size: calc(1.5em + 3vw);
+}
+h3 {
+  font-size: min(1.5em, calc(1em + 2vw));
 }

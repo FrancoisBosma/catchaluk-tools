@@ -10,10 +10,10 @@ meta:
 </script>
 
 <template>
-  <section w:m="x-[2vw]" w:p="b-4" w:border="b current">
-    <introduction />
+  <section w:m="x-[2vw]" w:p="y-4" w:border="b current">
+    <Introduction />
   </section>
-  <section>
-    <name-generator />
+  <section w:p="y-4">
+    <NameGenerator />
   </section>
 </template>
