@@ -12,7 +12,9 @@
       "@ROOT/*": ["./*"],
       "@SRC/*": ["src/*"],
       "@GLOBAL/*": ["src/global/*"],
-      "@FEATURES/*": ["src/features/*"]
+      "@FEATURES/*": ["src/features/*"],
+      "@ASSETS/*": ["src/assets/*"],
+      "@API/*": ["src/api/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

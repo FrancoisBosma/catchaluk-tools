@@ -25,6 +25,7 @@ export default defineConfig({
       '@GLOBAL/': `${path.resolve(__dirname, 'src/global')}/`,
       '@FEATURES/': `${path.resolve(__dirname, 'src/features')}/`,
       '@ASSETS/': `${path.resolve(__dirname, 'src/assets')}/`,
+      '@API/': `${path.resolve(__dirname, 'src/api')}/`,
     },
   },
   plugins: [
