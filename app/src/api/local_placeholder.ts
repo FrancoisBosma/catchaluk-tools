@@ -1,20 +1,22 @@
+import type { Dictionary, NameList } from '@ROOT/src/types'
+
 // CONSTANTS
 
 const APOSTROPHE_CHAR = "'"
 const DASH_CHAR = '-'
 const EMPTY_CHAR = ''
 
-const GENDERS = {
+const GENDERS: Dictionary<string> = {
   Female: 'Femme',
   Male: 'Homme',
   Neuter: 'Neutre',
 }
-const AGGLOMERATIONS = {
+const AGGLOMERATIONS: Dictionary<string> = {
   City: 'Ville',
   Town: 'Village',
 }
 
-const DEFAULT_SPECIAL_CHARS = {
+const DEFAULT_SPECIAL_CHARS: Dictionary<object> = {
   [APOSTROPHE_CHAR]: {
     isException: (/* name, charIndex */) => false,
     minDistFromEdges: 1, // 0 = first/last char
@@ -25,7 +27,7 @@ const DEFAULT_SPECIAL_CHARS = {
 
 // FUNCTIONS
 
-const getNameSizeLimits = (nameList: string[], populationName: string) => {
+const getNameSizeLimits = (nameList: NameList, populationName: string) => {
   const output = {
     minSize: 0,
     maxSize: 0,
@@ -76,7 +78,7 @@ const objectDeepEnoughCopy = (obj: object) =>
 
 // DATA
 
-const rawPopulationBase = {
+const rawPopulationBase: Dictionary<Dictionary<any>> = {
   Zacoalt: {
     agglomerationTemplates: {
       City: (n: string) => `${n}'tlan`,
@@ -215,7 +217,7 @@ const rawPopulationBase = {
     },
     get nomenclature() {
       const { minSize, maxSize } = getNameSizeLimits(
-        this.names.reduce((acc: string[], curr) => {
+        this.names.reduce((acc: string[], curr: Dictionary<string>) => {
           acc.push(curr.name)
           return acc
         }, []),
@@ -429,7 +431,7 @@ const rawPopulationBase = {
     },
     get nomenclature() {
       const { minSize, maxSize } = getNameSizeLimits(
-        this.names.reduce((acc: string[], curr) => {
+        this.names.reduce((acc: string[], curr: Dictionary<string>) => {
           acc.push(curr.name)
           return acc
         }, []),
@@ -583,7 +585,7 @@ const rawPopulationBase = {
     },
     get nomenclature() {
       const { minSize, maxSize } = getNameSizeLimits(
-        this.names.reduce((acc: string[], curr) => {
+        this.names.reduce((acc: string[], curr: Dictionary<string>) => {
           acc.push(curr.name)
           return acc
         }, []),
@@ -797,7 +799,7 @@ const rawPopulationBase = {
     },
     get nomenclature() {
       const { minSize, maxSize } = getNameSizeLimits(
-        this.names.reduce((acc: string[], curr) => {
+        this.names.reduce((acc: string[], curr: Dictionary<string>) => {
           acc.push(curr.name)
           return acc
         }, []),
@@ -954,7 +956,7 @@ const rawPopulationBase = {
     },
     get nomenclature() {
       const { minSize, maxSize } = getNameSizeLimits(
-        this.names.reduce((acc: string[], curr) => {
+        this.names.reduce((acc: string[], curr: Dictionary<string>) => {
           acc.push(curr.name)
           return acc
         }, []),
@@ -1111,7 +1113,7 @@ const rawPopulationBase = {
     },
     get nomenclature() {
       const { minSize, maxSize } = getNameSizeLimits(
-        this.names.reduce((acc: string[], curr) => {
+        this.names.reduce((acc: string[], curr: Dictionary<string>) => {
           acc.push(curr.name)
           return acc
         }, []),
@@ -1203,7 +1205,7 @@ const rawPopulationBase = {
     },
     get nomenclature() {
       const { minSize, maxSize } = getNameSizeLimits(
-        this.names.reduce((acc: string[], curr) => {
+        this.names.reduce((acc: string[], curr: Dictionary<string>) => {
           acc.push(curr.name)
           return acc
         }, []),
@@ -1226,14 +1228,12 @@ const PopulationBase = Object.fromEntries(
 )
 
 Object.entries(PopulationBase).forEach(([popName, popData]) => {
-  const formattedNames = popData.names.reduce((acc: object[], curr) => {
+  const formattedNames = popData.names.reduce((acc: object[], curr: Dictionary<string>) => {
     const formattedName = curr.name.replace(/-/g, '‑') // hyphen -> unbreakable hyphen
     acc.push({ gender: curr.gender, name: formattedName })
     return acc
   }, [])
-  // @ts-expect-error
   delete PopulationBase[popName].names
-  // @ts-expect-error
   PopulationBase[popName].names = formattedNames
 })
 
