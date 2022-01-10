@@ -6,10 +6,10 @@
   import PopulationTile from './PopulationTile'
 
   import findAllIndexes from '@GLOBAL/functions/strings'
-  import { range } from '@GLOBAL/functions/numbers'
-  import type { Dictionary } from '@ROOT/src/types'
+  import { randomInt, range } from '@GLOBAL/functions/numbers'
+  import type { Dictionary, NameList, OccurrenceTable } from '@ROOT/src/types'
 
-  import { EMPTY_CHAR, /* GENDERS, */ PopulationBase } from '@API/local_placeholder'
+  import { EMPTY_CHAR, GENDERS, PopulationBase } from '@API/local_placeholder'
 
   // non-reactive data
   const flickingOptions = {
@@ -22,9 +22,11 @@
   const flickingPlugins = [new Fade(), new Pagination({ type: 'bullet' })]
   // reactive data & computed
   const isCarouselMoving = ref(false)
+  const generatedNames = ref('(Veuillez sélectionner une catégorie)')
+  const nbOfwantedNames = ref(5)
   const selectedCriterium = ref({ populationName: '', critName: '', critValue: '' })
   const selectedNameBase = computed(() => {
-    const output: Dictionary<Array<string>> = {}
+    const output: Dictionary<NameList> = {}
     if (!selectedCriterium.value.populationName) return output
     PopulationBase[selectedCriterium.value.populationName].names.forEach((nameData) => {
       if (!Object.prototype.hasOwnProperty.call(output, nameData.gender)) output[nameData.gender] = []
@@ -54,8 +56,8 @@
     if (!areSpecialCharsRulesRespected) return false
     return true
   }
-  const generateCharOccurrenceTable = (nameList: string[]): Dictionary<Dictionary<number>> => {
-    const output: Dictionary<Dictionary<number>> = {}
+  const generateCharOccurrenceTable = (nameList: NameList): OccurrenceTable => {
+    const output: OccurrenceTable = {}
     nameList.forEach((name) => {
       range(name.length, -1).forEach((index) => {
         const currChar = name[index] ?? EMPTY_CHAR
@@ -72,13 +74,10 @@
     })
     return output
   }
-  const getRandomNamesFromCharOccurrences = (
-    occurrenceTable: Dictionary<Dictionary<number>>,
-    nbWanted: number
-  ): string[] => {
-    const output: string[] = []
+  const getRandomNamesFromCharOccurrences = (occurrenceTable: OccurrenceTable, nbWanted: number): NameList => {
+    const output: NameList = []
     if (!Object.keys(occurrenceTable).length) return output
-    const generateNewName = (occTable: Dictionary<Dictionary<number>>, legacyGeneratedNames: string[]): string => {
+    const generateNewName = (occTable: OccurrenceTable, legacyGeneratedNames: NameList): string => {
       let outputName = EMPTY_CHAR
       let charToAdd = EMPTY_CHAR
       let generationWasReset = false
@@ -111,6 +110,46 @@
     }
     range(nbWanted).forEach(() => output.push(generateNewName(occurrenceTable, output)))
     return output
+  }
+  const getRandomPopulationGenderName = (): string => {
+    const genderNameList = PopulationBase[selectedCriterium.value.populationName].criteria.gender
+    return genderNameList[randomInt(genderNameList.length)]
+  }
+  const generateRawNames = (): NameList => {
+    const { populationName, critName, critValue } = selectedCriterium.value
+    const randomGenderName = getRandomPopulationGenderName()
+    const genderSelection = critName === 'gender' ? critValue : randomGenderName
+    const selectedNames = PopulationBase[populationName].names.reduce((acc: NameList, curr) => {
+      if (curr.gender === GENDERS[genderSelection]) {
+        acc.push(curr.name)
+      }
+      return acc
+    }, [])
+    const charOccurrenceTable = generateCharOccurrenceTable(selectedNames)
+    return getRandomNamesFromCharOccurrences(charOccurrenceTable, nbOfwantedNames.value)
+  }
+  const postEditing = (nameList: NameList): NameList => {
+    const { populationName, critName, critValue } = selectedCriterium.value
+    if (critName === 'agglomeration') {
+      const output: NameList = []
+      const nameEditor = PopulationBase[populationName].agglomerationTemplates[critValue]
+      nameList.forEach((name, index) => (output[index] = nameEditor(name)))
+      return output
+    }
+    if (populationName === 'Atlec') {
+      const output: NameList = []
+      const familyNames = generateRawNames()
+      nameList.forEach((name, index, arr) => (output[index] = `${arr[index]} ${familyNames[index]}`))
+      return output
+    }
+    return nameList
+  }
+  const generateNames = (): void => {
+    const rawGeneratedNames = generateRawNames()
+    const generatedNameList = postEditing(rawGeneratedNames)
+    generatedNames.value = generatedNameList.length
+      ? generatedNameList.reduce((acc, curr) => `${acc}\n${curr}`)
+      : 'No data available\nfor this selection :/'
   }
   const handleTileButtonClick = (populationName: string, critName: string, critValue: string): void => {
     selectedCriterium.value = { populationName, critName, critValue }
