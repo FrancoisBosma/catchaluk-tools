@@ -163,6 +163,7 @@
   <p>Choisissez un peuple, puis cliquez sur le type de nom à générer</p>
   <UseMousePressed v-slot="{ pressed }">
     <Flicking
+      w:overflow="visible"
       :options="flickingOptions"
       :plugins="flickingPlugins"
       :style="{ cursor: pressed ? 'grabbing' : 'grab' }"
@@ -176,11 +177,15 @@
         :population-data="popData"
         :generation-trigger-callback="handleTileButtonClick"
         :is-carousel-moving="isCarouselMoving"
-        class="card-panel"
       />
       <template #viewport>
-        <div class="flicking-pagination"></div>
+        <div class="flicking-pagination -bottom-12 z-0"></div>
       </template>
     </Flicking>
   </UseMousePressed>
 </template>
+
+<style>
+  @import '@egjs/vue3-flicking/dist/flicking.css';
+  @import '@egjs/flicking-plugins/dist/flicking-plugins.css';
+</style>
