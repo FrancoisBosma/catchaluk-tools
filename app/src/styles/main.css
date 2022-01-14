@@ -1,5 +1,6 @@
 @import './markdown.css';
 @import './fonts.css';
+@import './colors.css';
 
 html,
 body,
@@ -9,8 +10,9 @@ body,
   padding: 0;
 }
 
-html.dark {
-  background: #121212;
+html {
+  color: var(--foreground);
+  background: var(--background);
 }
 
 #nprogress {
@@ -30,16 +32,15 @@ html.dark {
 }
 
 .btn {
-  @apply px-4 py-1 rounded inline-block
-    bg-red-600 text-white cursor-pointer
-    hover:bg-red-700
-    disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50;
+  @apply bg-[var(--red)] border-1 border-solid border-[var(--background)] rounded-[11px]
+  text-[aliceblue] text-lg h-10 w-24 hover:(text-[120%] border-2);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .icon-btn {
   @apply inline-block cursor-pointer select-none
     opacity-75 transition duration-200 ease-in-out
-    hover:opacity-100 hover:text-red-600;
+    hover:(opacity-100 text-[var(--red)]);
   font-size: 0.9em;
 }
 
@@ -51,6 +52,6 @@ html.dark {
 
 .ext-link-icon {
   width: 12px;
-  color: #d41413;
+  color: var(--red);
   margin-bottom: 5px;
 }
