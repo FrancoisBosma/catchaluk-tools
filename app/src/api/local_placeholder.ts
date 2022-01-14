@@ -1,17 +1,16 @@
 import type { Dictionary, NameList } from '@ROOT/src/types'
-
 // CONSTANTS
 
-const APOSTROPHE_CHAR = "'"
-const DASH_CHAR = '-'
-const EMPTY_CHAR = ''
+export const APOSTROPHE_CHAR = "'"
+export const DASH_CHAR = '-'
+export const EMPTY_CHAR = ''
 
-const GENDERS: Dictionary<string> = {
+export const GENDERS: Dictionary<string> = {
   Female: 'Femme',
   Male: 'Homme',
   Neuter: 'Neutre',
 }
-const AGGLOMERATIONS: Dictionary<string> = {
+export const AGGLOMERATIONS: Dictionary<string> = {
   City: 'Ville',
   Town: 'Village',
 }
@@ -77,8 +76,16 @@ const objectDeepEnoughCopy = (obj: object) =>
   )
 
 // DATA
+declare type populationName = Array<{ gender: string; name: string }>
+export type populationData = {
+  agglomerationTemplates: Dictionary<(n: string) => string>
+  criteria: Dictionary<Array<string>>
+  names: populationName
+  nomenclature: Dictionary<any>
+  redirectionLinks: Dictionary<string | string[] | boolean>
+}
 
-const rawPopulationBase: Dictionary<Dictionary<any>> = {
+const rawPopulationBase: Dictionary<populationData> = {
   Zacoalt: {
     agglomerationTemplates: {
       City: (n: string) => `${n}'tlan`,
@@ -1227,14 +1234,15 @@ const PopulationBase = Object.fromEntries(
   Object.entries(rawPopulationBase).sort((popA, popB) => (popA[0] < popB[0] ? -1 : 1))
 )
 
-Object.entries(PopulationBase).forEach(([popName, popData]) => {
-  const formattedNames = popData.names.reduce((acc: object[], curr: Dictionary<string>) => {
+Object.entries(PopulationBase).forEach(([popName, populationData]) => {
+  const formattedNames = populationData.names.reduce((acc: populationName, curr: Dictionary<string>) => {
     const formattedName = curr.name.replace(/-/g, '‑') // hyphen -> unbreakable hyphen
     acc.push({ gender: curr.gender, name: formattedName })
     return acc
   }, [])
+  // @ts-expect-error
   delete PopulationBase[popName].names
   PopulationBase[popName].names = formattedNames
 })
 
-export { AGGLOMERATIONS, EMPTY_CHAR, GENDERS, PopulationBase }
+export { PopulationBase }
