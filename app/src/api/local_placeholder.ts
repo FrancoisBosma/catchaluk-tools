@@ -26,7 +26,7 @@ const DEFAULT_SPECIAL_CHARS: Dictionary<object> = {
 
 // FUNCTIONS
 
-const getNameSizeLimits = (nameList: NameList, populationName: string) => {
+const getNameSizeLimits = (nameList: NameList, PopulationName: string) => {
   const output = {
     minSize: 0,
     maxSize: 0,
@@ -45,7 +45,7 @@ const getNameSizeLimits = (nameList: NameList, populationName: string) => {
     }
   })
   // manual override
-  switch (populationName) {
+  switch (PopulationName) {
     case 'Atlec':
       output.minSize = 6
       break
@@ -76,16 +76,16 @@ const objectDeepEnoughCopy = (obj: object) =>
   )
 
 // DATA
-declare type populationName = Array<{ gender: string; name: string }>
-export type populationData = {
+declare type PopulationName = Array<{ gender: string; name: string }>
+export type PopulationData = {
   agglomerationTemplates: Dictionary<(n: string) => string>
   criteria: Dictionary<Array<string>>
-  names: populationName
+  names: PopulationName
   nomenclature: Dictionary<any>
   redirectionLinks: Dictionary<string | string[] | boolean>
 }
 
-const rawPopulationBase: Dictionary<populationData> = {
+const rawPopulationBase: Dictionary<PopulationData> = {
   Zacoalt: {
     agglomerationTemplates: {
       City: (n: string) => `${n}'tlan`,
@@ -1234,8 +1234,8 @@ const PopulationBase = Object.fromEntries(
   Object.entries(rawPopulationBase).sort((popA, popB) => (popA[0] < popB[0] ? -1 : 1))
 )
 
-Object.entries(PopulationBase).forEach(([popName, populationData]) => {
-  const formattedNames = populationData.names.reduce((acc: populationName, curr: Dictionary<string>) => {
+Object.entries(PopulationBase).forEach(([popName, PopulationData]) => {
+  const formattedNames = PopulationData.names.reduce((acc: PopulationName, curr: Dictionary<string>) => {
     const formattedName = curr.name.replace(/-/g, '‑') // hyphen -> unbreakable hyphen
     acc.push({ gender: curr.gender, name: formattedName })
     return acc

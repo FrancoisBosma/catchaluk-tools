@@ -1,11 +1,13 @@
 <script setup lang="ts">
-  import type { populationData } from '@API/local_placeholder'
+  import TileHeader from './TileHeader'
+
+  import type { PopulationData } from '@API/local_placeholder'
   import { AGGLOMERATIONS, GENDERS } from '@API/local_placeholder'
 
   defineProps<{
-    isCarouselMoving: Boolean
-    populationName: String
-    populationData: populationData
+    isCarouselMoving: boolean
+    populationName: string
+    populationData: PopulationData
     generationTriggerCallback: Function
   }>()
 </script>
@@ -20,7 +22,11 @@
     w:m="x-8"
     w:p="4"
   >
-    <div>HEADER</div>
+    <TileHeader
+      :population-name="populationName"
+      :redirection-links="populationData.redirectionLinks"
+      :is-carousel-moving="isCarouselMoving"
+    />
     <div class="grid" w:gap="y-[10px]">
       <div
         v-for="([critName, critValues], index) in Object.entries(populationData.criteria)"
