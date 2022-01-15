@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import smallBg from '@ASSETS/background_small_screens.jpg'
-  import largeBg from '@ASSETS/background_large_screens.png'
+  import smallBg from '@ASSETS/background_small_screens.jpg?url'
+  import largeBg from '@ASSETS/background_large_screens.png?url'
   const urls = {
     small: `url(${smallBg})`,
     large: `url(${largeBg})`,

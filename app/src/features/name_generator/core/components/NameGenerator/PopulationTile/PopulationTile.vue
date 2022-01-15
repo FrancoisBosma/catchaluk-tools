@@ -4,12 +4,41 @@
   import type { PopulationData } from '@API/local_placeholder'
   import { AGGLOMERATIONS, GENDERS } from '@API/local_placeholder'
 
+  import akoutlalPortrait from '@ASSETS/Akoutlal.jpg?url'
+  import atlecPortrait from '@ASSETS/Atlec.jpg?url'
+  import cutchakan_iktomiPortrait from '@ASSETS/Cutchakan&Iktomi.jpg?url'
+  import oxotlliPortrait from '@ASSETS/Oxotlli.jpg?url'
+  import tiguiPortrait from '@ASSETS/Tigui.jpg?url'
+  import tucoyaPortrait from '@ASSETS/Tucoya.jpg?url'
+  import zacoaltPortrait from '@ASSETS/Zacoalt.jpg?url'
+
   defineProps<{
     isCarouselMoving: boolean
     populationName: string
     populationData: PopulationData
     generationTriggerCallback: Function
   }>()
+
+  const getBgImage = (popName: string) => {
+    switch (popName) {
+      case 'Akoutlal':
+        return `url(${akoutlalPortrait})`
+      case 'Atlec':
+        return `url(${atlecPortrait})`
+      case 'Cutchakan&Iktomi':
+        return `url(${cutchakan_iktomiPortrait})`
+      case 'Oxotlli':
+        return `url(${oxotlliPortrait})`
+      case 'Tigui':
+        return `url(${tiguiPortrait})`
+      case 'Tucoya':
+        return `url(${tucoyaPortrait})`
+      case 'Zacoalt':
+        return `url(${zacoaltPortrait})`
+      default:
+        break
+    }
+  }
 </script>
 
 <template>
@@ -21,6 +50,7 @@
     w:justify="end"
     w:m="x-8"
     w:p="4 t-0"
+    :style="{ backgroundImage: getBgImage(populationName) }"
   >
     <TileHeader
       :population-name="populationName"
