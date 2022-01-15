@@ -53,5 +53,6 @@ html {
 .ext-link-icon {
   width: 12px;
   color: var(--red);
-  margin-bottom: 5px;
+  top: -3px;
+  position: relative;
 }
