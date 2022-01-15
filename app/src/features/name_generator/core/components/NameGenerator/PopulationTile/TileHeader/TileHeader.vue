@@ -30,7 +30,6 @@
         </span>
       </a>
       <span class="title">&nbsp; et&nbsp;</span>
-      <!-- &nbsp;&nbsp; et &nbsp; -->
       <a :href="redirectionLinks.population[1]" target="_blank" rel="noopener noreferrer" class="ext-link">
         <span class="title relative">
           {{ populationName.split('&')[1] }}<uil-external-link-alt class="ext-link-icon absolute top-[-45%]" /> &nbsp;
