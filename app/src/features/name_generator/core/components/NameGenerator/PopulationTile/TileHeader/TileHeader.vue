@@ -21,19 +21,19 @@
         class="ext-link"
       >
         <span class="title relative">
-          {{ populationName }}<uil-external-link-alt class="ext-link-icon absolute top-[-45%]" />
+          {{ populationName }}<uil-external-link-alt class="ext-link-icon absolute top-[-35%]" />
         </span>
       </a>
       <template v-else>
         <a :href="redirectionLinks.population[0]" target="_blank" rel="noopener noreferrer" class="ext-link">
           <span class="title relative">
-            {{ populationName.split('&')[0] }}<uil-external-link-alt class="ext-link-icon absolute top-[-45%]" />
+            {{ populationName.split('&')[0] }}<uil-external-link-alt class="ext-link-icon absolute top-[-35%]" />
           </span>
         </a>
         <span class="title">&nbsp; et&nbsp;</span>
         <a :href="redirectionLinks.population[1]" target="_blank" rel="noopener noreferrer" class="ext-link">
           <span class="title relative">
-            {{ populationName.split('&')[1] }}<uil-external-link-alt class="ext-link-icon absolute top-[-45%]" /> &nbsp;
+            {{ populationName.split('&')[1] }}<uil-external-link-alt class="ext-link-icon absolute top-[-35%]" /> &nbsp;
           </span>
         </a>
       </template>
