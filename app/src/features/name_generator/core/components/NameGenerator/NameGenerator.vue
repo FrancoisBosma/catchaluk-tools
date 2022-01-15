@@ -188,4 +188,9 @@
 <style>
   @import '@egjs/vue3-flicking/dist/flicking.css';
   @import '@egjs/flicking-plugins/dist/flicking-plugins.css';
+
+  /* Imported from 'flicking' component's css */
+  .flicking-pagination-bullet-active {
+    background-color: var(--red);
+  }
 </style>
