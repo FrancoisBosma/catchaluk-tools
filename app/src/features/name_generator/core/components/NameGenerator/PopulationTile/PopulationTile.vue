@@ -18,9 +18,9 @@
     w:w="[180px] sm:([386px])"
     w:border="3 solid [var(--background)] rounded-[10px]"
     class="flex flex-col"
-    w:justify="evenly sm:(between)"
+    w:justify="end"
     w:m="x-8"
-    w:p="4"
+    w:p="4 t-0"
   >
     <TileHeader
       :population-name="populationName"
