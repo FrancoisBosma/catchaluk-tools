@@ -77,12 +77,13 @@ const objectDeepEnoughCopy = (obj: object) =>
 
 // DATA
 declare type PopulationName = Array<{ gender: string; name: string }>
+export type RedirectionLinks = { population: string | string[]; info: boolean }
 export type PopulationData = {
   agglomerationTemplates: Dictionary<(n: string) => string>
   criteria: Dictionary<Array<string>>
   names: PopulationName
   nomenclature: Dictionary<any>
-  redirectionLinks: Dictionary<string | string[] | boolean>
+  redirectionLinks: RedirectionLinks
 }
 
 const rawPopulationBase: Dictionary<PopulationData> = {
