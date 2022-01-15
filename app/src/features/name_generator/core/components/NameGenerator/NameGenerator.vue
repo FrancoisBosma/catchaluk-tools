@@ -158,7 +158,7 @@
 </script>
 
 <template>
-  <h2 w:m="b-8">Générateur de noms</h2>
+  <h2 w:m="b-4">Générateur de noms</h2>
   <h3 w:m="b-4">Générez aléatoirement 5 noms de personnages ou d'agglomérations</h3>
   <p w:p="b-4">Choisissez un peuple, puis cliquez sur le type de nom à générer</p>
   <UseMousePressed v-slot="{ pressed }">
