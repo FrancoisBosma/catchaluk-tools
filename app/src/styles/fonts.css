@@ -18,11 +18,11 @@ p {
 }
 
 h1 {
-  font-size: calc(1.5em + 8vw);
+  font-size: calc(1.5rem + 8vw);
 }
 h2 {
-  font-size: calc(1.5em + 3vw);
+  font-size: calc(1.5rem + 3vw);
 }
 h3 {
-  font-size: min(1.5em, calc(1em + 2vw));
+  font-size: min(1.5rem, calc(1rem + 2vw));
 }
