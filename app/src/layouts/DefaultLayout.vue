@@ -8,7 +8,7 @@
 </script>
 
 <template>
-  <main w:bg="100%" w:h="full" w:p="sm:(x-[6.9vw])" w:text="center">
+  <main w:bg="100%" w:h="min-full" w:p="sm:(x-[6.9vw])" w:text="center">
     <router-view />
   </main>
   <Footer />
