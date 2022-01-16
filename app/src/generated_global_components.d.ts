@@ -4,10 +4,13 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    FaSolidGreaterThan: typeof import('~icons/fa-solid/greater-than')['default']
+    FaSolidLessThan: typeof import('~icons/fa-solid/less-than')['default']
     FluentQuestion48Filled: typeof import('~icons/fluent/question48-filled')['default']
     FontelicoEmoSunglasses: typeof import('~icons/fontelico/emo-sunglasses')['default']
     Footer: typeof import('./global/components/Footer.vue')['default']
     UilExternalLinkAlt: typeof import('~icons/uil/external-link-alt')['default']
+    WhhHandswipe: typeof import('~icons/whh/handswipe')['default']
   }
 }
 
