@@ -161,9 +161,10 @@
   <h2 w:m="b-4">Générateur de noms</h2>
   <h3 w:m="b-4">Générez aléatoirement 5 noms de personnages ou d'agglomérations</h3>
   <p w:p="b-4">Choisissez un peuple, puis cliquez sur le type de nom à générer</p>
-  <UseMousePressed v-slot="{ pressed }">
+  <UseMousePressed v-slot="{ pressed }" w:position="relative">
     <Flicking
-      w:overflow="visible"
+      w:overflow="x-hidden y-visible"
+      w:p="b-14"
       :options="flickingOptions"
       :plugins="flickingPlugins"
       :style="{ cursor: pressed ? 'grabbing' : 'grab' }"
@@ -179,10 +180,16 @@
         :is-carousel-moving="isCarouselMoving"
       />
       <template #viewport>
-        <div class="flicking-pagination -bottom-12 z-0"></div>
+        <div class="flicking-pagination bottom-0"></div>
       </template>
     </Flicking>
+    <div v-show="!isCarouselMoving" w:w="full" w:position="absolute" w:bottom="[calc(50%+10px)]">
+      <fa-solid-less-than w:text="[25px]" w:position="relative" w:right="[210px]" />
+      <fa-solid-greater-than w:text="[25px]" w:position="relative" w:left="[210px]" />
+    </div>
+    <whh-handswipe w:text="[25px]" w:position="absolute" w:left="[calc(50%-15px)]" w:bottom="4" />
   </UseMousePressed>
+  <h3 w:m="t-10">Noms aléatoirement générés</h3>
 </template>
 
 <style>
