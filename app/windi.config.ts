@@ -47,5 +47,6 @@ export default defineConfig({
     'font-zacoalt': {
       'font-family': '"Zacoalt", Avenir, Helvetica, Arial, sans-serif',
     },
+    'text-box': 'text-[var(--foreground)] border-[var(--foreground)] border-1 rounded-[10px] bg-cover',
   },
 })
