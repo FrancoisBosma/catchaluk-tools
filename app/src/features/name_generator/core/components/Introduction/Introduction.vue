@@ -1,7 +1,12 @@
 <template>
   <h1>Catchaluk tools</h1>
   <h3>
-    <a href="https://catchaluk.wixsite.com/lejdr" target="_blank" rel="noopener noreferrer" class="ext-link">
+    <a
+      href="https://catchaluk.wixsite.com/lejdr"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="ext-link font-zacoalt"
+    >
       Catchaluk<uil-external-link-alt class="ext-link-icon"
     /></a>
     <span>
