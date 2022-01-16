@@ -100,6 +100,7 @@
   }
   .info-icon:hover,
   .info-icon:active {
+    @apply duration-100;
     transform: rotate(45deg);
   }
 </style>
