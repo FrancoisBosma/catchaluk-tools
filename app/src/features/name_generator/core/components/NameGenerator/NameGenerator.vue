@@ -5,6 +5,8 @@
 
   import PopulationTile from './PopulationTile'
 
+  import textBg from '@ASSETS/text_background.jpg?url'
+
   import findAllIndexes from '@GLOBAL/functions/strings'
   import { randomInt, range } from '@GLOBAL/functions/numbers'
   import type { Dictionary, NameList, OccurrenceTable } from '@ROOT/src/types'
@@ -20,6 +22,7 @@
     noPanelStyleOverride: true,
   }
   const flickingPlugins = [new Fade(), new Pagination({ type: 'bullet' })]
+  const generatedNamesBg = `url(${textBg})`
   // reactive data & computed
   const isCarouselMoving = ref(false)
   const generatedNames = ref('(Veuillez sélectionner une catégorie)')
@@ -189,7 +192,12 @@
     </div>
     <whh-handswipe w:text="[25px]" w:position="absolute" w:left="[calc(50%-15px)]" w:bottom="4" />
   </UseMousePressed>
-  <h3 w:m="t-10">Noms aléatoirement générés</h3>
+  <h3 w:m="t-10 b-4">Noms aléatoirement générés</h3>
+  <div w:display="flex" w:justify="center">
+    <div class="generated-names">
+      <pre w:whitespace="pre-wrap">{{ generatedNames }}</pre>
+    </div>
+  </div>
 </template>
 
 <style>
@@ -199,5 +207,19 @@
   /* Imported from 'flicking' component's css */
   .flicking-pagination-bullet-active {
     background-color: var(--red);
+  }
+</style>
+
+<style scoped>
+  .generated-names {
+    @apply children:(font-zacoalt) text-xl text-[var(--foreground)] border-1 border-[var(--foreground)]
+      rounded-[10px] flex flex-col justify-center h-min-[240px];
+    @apply sm:(text-2xl);
+    background-image: v-bind('generatedNamesBg');
+    background-size: 100%;
+    width: min(90%, 386px);
+    @screen sm {
+      width: max(386px, 50%);
+    }
   }
 </style>
