@@ -22,7 +22,7 @@
     noPanelStyleOverride: true,
   }
   const flickingPlugins = [new Fade(), new Pagination({ type: 'bullet' })]
-  const generatedNamesBg = `url(${textBg})`
+  const textBoxBg = `url(${textBg})`
   // reactive data & computed
   const isCarouselMoving = ref(false)
   const generatedNames = ref('(Veuillez sélectionner une catégorie)')
@@ -161,12 +161,11 @@
 </script>
 
 <template>
-  <h2 w:m="b-4">Générateur de noms</h2>
+  <h2 w:m="b-4" w:font="sans">Générateur de noms</h2>
   <h3 w:m="b-4">Générez aléatoirement 5 noms de personnages ou d'agglomérations</h3>
   <p w:p="b-4">Choisissez un peuple, puis cliquez sur le type de nom à générer</p>
   <UseMousePressed v-slot="{ pressed }" w:position="relative">
     <Flicking
-      w:overflow="x-hidden y-visible"
       w:p="b-14"
       :options="flickingOptions"
       :plugins="flickingPlugins"
@@ -198,27 +197,51 @@
       <pre w:whitespace="pre-wrap">{{ generatedNames }}</pre>
     </div>
   </div>
+  <template v-if="selectedCriterium.populationName">
+    <h3 w:p="y-4">
+      Base de noms utilisée :
+      <span class="font-zacoalt underline decoration-dashed">{{ selectedCriterium.populationName }}</span>
+    </h3>
+    <div w:display="flex" w:gap="20px" w:m="x-[5%]" w:justify="center" w:flex="wrap" w:children="max-w-[386px] p-4">
+      <div
+        v-for="([gender, genderedNameList], index) in Object.entries(selectedNameBase)"
+        :key="index"
+        class="text-box"
+        :style="{ backgroundImage: textBoxBg }"
+      >
+        <p w:p="b-4">{{ gender }}</p>
+        <em w:text="[15px]" w:font="sans">{{ genderedNameList.join(', ') }}</em>
+      </div>
+    </div>
+  </template>
 </template>
 
 <style>
   @import '@egjs/vue3-flicking/dist/flicking.css';
   @import '@egjs/flicking-plugins/dist/flicking-plugins.css';
 
-  /* Imported from 'flicking' component's css */
+  /* Imported from 'flicking' component's css (cf. index.html link tag)
+   * N.B: this one has to be declared before
+  */
   .flicking-pagination-bullet-active {
     background-color: var(--red);
   }
 </style>
 
 <style scoped>
+  /* Imported from 'flicking' component's css */
+  .flicking-viewport {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
   .generated-names {
-    @apply children:(font-zacoalt) text-xl text-[var(--foreground)] border-1 border-[var(--foreground)]
-      rounded-[10px] flex flex-col justify-center h-min-[240px];
-    @apply sm:(text-2xl);
-    background-image: v-bind('generatedNamesBg');
-    background-size: 100%;
+    @apply text-box;
+    @apply children:(font-zacoalt) flex flex-col justify-center h-min-[240px];
+    font-size: x-large;
+    background-image: v-bind('textBoxBg');
     width: min(90%, 386px);
     @screen sm {
+      font-size: xx-large;
       width: max(386px, 50%);
     }
   }
