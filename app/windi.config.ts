@@ -43,4 +43,9 @@ export default defineConfig({
       },
     },
   },
+  shortcuts: {
+    'font-zacoalt': {
+      'font-family': '"Zacoalt", Avenir, Helvetica, Arial, sans-serif',
+    },
+  },
 })
