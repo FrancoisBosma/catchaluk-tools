@@ -92,7 +92,7 @@
 
 <style scoped>
   .title {
-    font-family: 'Zacoalt', Avenir, Helvetica, Arial, sans-serif;
+    @apply font-zacoalt;
     font-size: 30px;
   }
   .info-icon {
