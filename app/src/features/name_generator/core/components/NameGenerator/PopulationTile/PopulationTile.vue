@@ -47,7 +47,7 @@
     w:w="[180px] sm:([386px])"
     w:border="3 solid [var(--background)] rounded-[10px]"
     class="flex flex-col"
-    w:justify="end"
+    w:justify="start"
     w:m="x-8"
     w:p="4 t-0"
     :style="{ backgroundImage: getBgImage(populationName) }"
@@ -61,9 +61,10 @@
       <div
         v-for="([critName, critValues], index) in Object.entries(populationData.criteria)"
         :key="index"
-        class="flex wrap"
+        class="flex flex-wrap"
         w:gap="[5px]"
         w:justify="center"
+        w:align="items-center"
       >
         <button
           v-for="(critValue, index2) in critValues"

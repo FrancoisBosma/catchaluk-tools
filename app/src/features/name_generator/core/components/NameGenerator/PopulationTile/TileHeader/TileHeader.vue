@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <div w:position="relative" class="flex flex-auto justify-center items-center">
+  <div w:position="relative" class="flex min-h-2/5 justify-center items-center">
     <h3>
       <a
         v-if="typeof redirectionLinks.population === 'string'"
@@ -39,7 +39,7 @@
       </template>
     </h3>
     <div v-if="redirectionLinks.info" class="absolute top-0 right-0">
-      <Popper placement="top" arrow class="absolute top-[22px] right-0">
+      <Popper placement="top" arrow class="absolute top-8px -right-8px">
         <span w:cursor="pointer">
           <fluent-question-48-filled
             w:bg="[white]"
@@ -50,7 +50,7 @@
           />
         </span>
         <template #content>
-          <div w:w="max max-[20vw]" w:text="left" w:font="all:sans">
+          <div w:w="max max-[20vw]" w:text="left" w:font="all:sans" w:z="2">
             <span v-if="populationName === 'Atlec'">
               Les atlecs sont le seul peuple à faire une usage courant du noms de famille
             </span>

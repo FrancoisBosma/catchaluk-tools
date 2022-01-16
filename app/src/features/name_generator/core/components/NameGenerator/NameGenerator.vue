@@ -186,8 +186,8 @@
       </template>
     </Flicking>
     <div v-show="!isCarouselMoving" w:w="full" w:position="absolute" w:bottom="[calc(50%+10px)]">
-      <fa-solid-less-than w:text="[25px]" w:position="relative" w:right="[210px]" />
-      <fa-solid-greater-than w:text="[25px]" w:position="relative" w:left="[210px]" />
+      <fa-solid-less-than w:text="[25px]" w:position="relative" w:right="[107px] sm:([210px])" />
+      <fa-solid-greater-than w:text="[25px]" w:position="relative" w:left="[107px] sm:([210px])" />
     </div>
     <whh-handswipe w:text="[25px]" w:position="absolute" w:left="[calc(50%-15px)]" w:bottom="4" />
   </UseMousePressed>
@@ -233,6 +233,9 @@
   .flicking-viewport {
     overflow-x: clip;
     overflow-y: visible;
+  }
+  .flicking-pagination {
+    z-index: 0;
   }
   .generated-names {
     @apply text-box;
