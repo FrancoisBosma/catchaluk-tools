@@ -43,8 +43,8 @@
 
 <template>
   <div
-    w:w="[180px] sm:([386px])"
-    w:h="[386px] sm:([180px])"
+    w:w="180px sm:386px"
+    w:h="386px sm:180px"
     w:border="3 solid [var(--background)] rounded-[10px]"
     w:justify="start"
     w:m="x-8"
@@ -56,12 +56,13 @@
     <div
       w:z="-1"
       w:position="absolute"
-      w:left="-1px"
-      w:top="-1px"
-      w:rounded="5px"
+      w:left="-103px sm:-1px"
+      w:top="102px sm:-1px"
+      w:rounded="8px"
       w:bg="cover"
-      w:w="[calc(100%+1px)]"
-      w:h="[calc(100%+1px)]"
+      w:w="380px sm:[calc(100%+1px)]"
+      w:h="175px sm:[calc(100%+1px)]"
+      class="<sm:(transform rotate-90)"
       :style="{ backgroundImage: getBgImage(populationName) }"
     />
     <TileHeader
