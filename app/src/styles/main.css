@@ -37,17 +37,17 @@ html {
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-.icon-btn {
+/* .icon-btn {
   @apply inline-block cursor-pointer select-none
     opacity-75 transition duration-200 ease-in-out
     hover:(opacity-100 text-[var(--red)]);
   font-size: 0.9em;
-}
+} */
 
 .ext-link {
   @apply inline-block cursor-pointer select-none
-  transition duration-200 ease-in-out
-  hover:(underline);
+  transition-all duration-100 ease-in-out
+  hover:(underline) active:(text-[var(--red)]);
 }
 
 .ext-link-icon {
