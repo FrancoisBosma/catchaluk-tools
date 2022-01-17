@@ -90,18 +90,19 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="postcss" scoped>
   .title {
     @apply font-zacoalt;
     font-size: 30px;
   }
   .info-icon {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  }
-  .info-icon:hover,
-  .info-icon:active {
-    @apply duration-100;
-    transform: rotate(45deg);
+    @apply transition-all duration-200 ease-in;
+    &:hover,
+    &:active {
+      @apply transition-all duration-200 ease-out;
+      transform: rotate(45deg);
+    }
   }
 </style>
 <style>

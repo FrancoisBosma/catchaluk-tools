@@ -192,7 +192,7 @@
     <whh-handswipe w:text="[25px]" w:position="absolute" w:left="[calc(50%-15px)]" w:bottom="4" />
   </UseMousePressed>
   <h3 w:m="t-10 b-4">Noms aléatoirement générés</h3>
-  <div w:display="flex" w:justify="center">
+  <div w:flex="~" w:justify="center">
     <div class="generated-names">
       <pre w:whitespace="pre-wrap">{{ generatedNames }}</pre>
     </div>
@@ -202,7 +202,7 @@
       Base de noms utilisée :
       <span class="font-zacoalt underline decoration-dashed">{{ selectedCriterium.populationName }}</span>
     </h3>
-    <div w:display="flex" w:gap="20px" w:m="x-[5%]" w:justify="center" w:flex="wrap" w:children="max-w-[386px] p-4">
+    <div w:gap="20px" w:m="x-[5%]" w:justify="center" w:flex="~ wrap" w:children="max-w-[386px] p-4">
       <div
         v-for="([gender, genderedNameList], index) in Object.entries(selectedNameBase)"
         :key="index"
@@ -228,7 +228,7 @@
   }
 </style>
 
-<style scoped>
+<style lang="postcss" scoped>
   /* Imported from 'flicking' component's css */
   .flicking-viewport {
     overflow-x: clip;
