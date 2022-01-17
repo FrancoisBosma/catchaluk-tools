@@ -186,10 +186,10 @@
       </template>
     </Flicking>
     <div v-show="!isCarouselMoving" w:w="full" w:position="absolute" w:bottom="[calc(50%+10px)]">
-      <fa-solid-less-than w:text="[25px]" w:position="relative" w:right="[107px] sm:([210px])" />
-      <fa-solid-greater-than w:text="[25px]" w:position="relative" w:left="[107px] sm:([210px])" />
+      <fa-solid-less-than w:text="25px" w:position="relative" w:right="107px sm:210px" />
+      <fa-solid-less-than w:text="25px" w:position="relative" w:left="107px sm:210px" w:transform="~ rotate-180" />
     </div>
-    <whh-handswipe w:text="[25px]" w:position="absolute" w:left="[calc(50%-15px)]" w:bottom="4" />
+    <whh-handswipe w:text="25px" w:position="absolute" w:left="[calc(50%-15px)]" w:bottom="4" />
   </UseMousePressed>
   <h3 w:m="t-10 b-4">Noms aléatoirement générés</h3>
   <div w:flex="~" w:justify="center">
