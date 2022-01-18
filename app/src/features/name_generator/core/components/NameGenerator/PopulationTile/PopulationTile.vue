@@ -45,7 +45,7 @@
   <div
     w:w="180px sm:386px"
     w:h="386px sm:180px"
-    w:border="3 solid [var(--background)] rounded-[10px]"
+    w:border="3 solid [var(--foreground)] rounded-[10px]"
     w:justify="start"
     w:m="x-8"
     w:p="4 t-0"
