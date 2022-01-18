@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     FaSolidLessThan: typeof import('~icons/fa-solid/less-than')['default']
     FluentQuestion48Filled: typeof import('~icons/fluent/question48-filled')['default']
     FontelicoEmoSunglasses: typeof import('~icons/fontelico/emo-sunglasses')['default']
