@@ -8,13 +8,14 @@ specifiers:
   '@cypress/vue': ^2.2.3
   '@egjs/flicking-plugins': ^4.2.2
   '@egjs/vue3-flicking': ^4.4.3
-  '@iconify-json/carbon': ^1.0.12
   '@iconify-json/fa-solid': ^1.0.3
   '@iconify-json/fluent': ^1.0.12
   '@iconify-json/fontelico': ^1.0.1
+  '@iconify-json/fontisto': ^1.0.1
   '@iconify-json/ion': ^1.0.3
   '@iconify-json/uil': ^1.0.2
   '@iconify-json/whh': ^1.0.1
+  '@iconify-json/zmdi': ^1.0.1
   '@intlify/vite-plugin-vue-i18n': ^2.5.0
   '@types/markdown-it-link-attributes': ^3.0.1
   '@types/nprogress': ^0.2.0
@@ -104,13 +105,14 @@ devDependencies:
   '@commitlint/config-conventional': 15.0.0
   '@cypress/vite-dev-server': 2.2.2_vite@2.7.9
   '@cypress/vue': 2.2.3_cypress@9.2.0+vue@3.2.26
-  '@iconify-json/carbon': 1.0.12
   '@iconify-json/fa-solid': 1.0.3
   '@iconify-json/fluent': 1.0.12
   '@iconify-json/fontelico': 1.0.1
+  '@iconify-json/fontisto': 1.0.1
   '@iconify-json/ion': 1.0.3
   '@iconify-json/uil': 1.0.2
   '@iconify-json/whh': 1.0.1
+  '@iconify-json/zmdi': 1.0.1
   '@intlify/vite-plugin-vue-i18n': 2.5.0
   '@types/markdown-it-link-attributes': 3.0.1
   '@types/nprogress': 0.2.0
@@ -1750,12 +1752,6 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/carbon/1.0.12:
-    resolution: {integrity: sha512-wqO/tnPis6BRxY9QP2Wqprfnb90dPr3O0LBkaG7e/nE5C7KySrLEweBoTn129muENM40wwHCJ6hqzXrmgfhH/A==}
-    dependencies:
-      '@iconify/types': 1.0.12
-    dev: true
-
   /@iconify-json/fa-solid/1.0.3:
     resolution: {integrity: sha512-bS9iiMP3yKVApgCbSG7AMrJ13vNq8kOjLxNUxuPonwcT4hEmJAgN1L5VUPfc8+gjlXMubm+x04H9WEU6OWMgwQ==}
     dependencies:
@@ -1774,6 +1770,12 @@ packages:
       '@iconify/types': 1.0.12
     dev: true
 
+  /@iconify-json/fontisto/1.0.1:
+    resolution: {integrity: sha512-Ox3r74dTzBRb29mefPPjT/6cYzFivQDX/3nN+YMxoOcyPxmWq2sx4yz0lCTFPYb9QTZT8LjupuVBrK1RXY9Tqg==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
   /@iconify-json/ion/1.0.3:
     resolution: {integrity: sha512-U+ykIbPHxvfUggDhvkd1eZUniUVhbwXeu9qMJsuJWjL1QOlDlBBDgdJgDqnPAQ7o67A+i23PNM5RLSQnKGTWzw==}
     dependencies:
@@ -1788,6 +1790,12 @@ packages:
 
   /@iconify-json/whh/1.0.1:
     resolution: {integrity: sha512-s03Xs8hXzEES3KSGHMtBRm8Es2EwWr8KAjuA3pHOWfh58HZduRA/atEHEzM4NwYMgHRq8hitDmFFbmclFsa8rA==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/zmdi/1.0.1:
+    resolution: {integrity: sha512-khPmpCrGxKus/xZjHcNGODpBcBbFhmdTl+dV5HQeD2lx5tdro15JdeeG1TWdhgwVxRDEvSDI9tepfBi9zbIHUw==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: true
