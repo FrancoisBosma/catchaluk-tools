@@ -12,6 +12,7 @@ specifiers:
   '@iconify-json/fa-solid': ^1.0.3
   '@iconify-json/fluent': ^1.0.12
   '@iconify-json/fontelico': ^1.0.1
+  '@iconify-json/ion': ^1.0.3
   '@iconify-json/uil': ^1.0.2
   '@iconify-json/whh': ^1.0.1
   '@intlify/vite-plugin-vue-i18n': ^2.5.0
@@ -107,6 +108,7 @@ devDependencies:
   '@iconify-json/fa-solid': 1.0.3
   '@iconify-json/fluent': 1.0.12
   '@iconify-json/fontelico': 1.0.1
+  '@iconify-json/ion': 1.0.3
   '@iconify-json/uil': 1.0.2
   '@iconify-json/whh': 1.0.1
   '@intlify/vite-plugin-vue-i18n': 2.5.0
@@ -1768,6 +1770,12 @@ packages:
 
   /@iconify-json/fontelico/1.0.1:
     resolution: {integrity: sha512-9MnQ9GVpg/6v5n1tqnldYiFXVc8lxqnxM7oSJdqK1wh+GgQcR2AKA631GnkNk6gCDSpqCk5l4MQMKNLKxgHF4Q==}
+    dependencies:
+      '@iconify/types': 1.0.12
+    dev: true
+
+  /@iconify-json/ion/1.0.3:
+    resolution: {integrity: sha512-U+ykIbPHxvfUggDhvkd1eZUniUVhbwXeu9qMJsuJWjL1QOlDlBBDgdJgDqnPAQ7o67A+i23PNM5RLSQnKGTWzw==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: true
