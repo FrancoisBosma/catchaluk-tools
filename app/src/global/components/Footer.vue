@@ -26,6 +26,6 @@
 
 <style>
   footer * {
-    font-family: 'Alliance No.1';
+    font-family: 'Alliance No.1', sans-serif;
   }
 </style>
