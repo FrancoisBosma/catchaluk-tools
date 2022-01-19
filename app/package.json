@@ -63,6 +63,8 @@
     "@iconify-json/whh": "^1.0.1",
     "@iconify-json/zmdi": "^1.0.1",
     "@intlify/vite-plugin-vue-i18n": "^2.5.0",
+    "@netlify/plugin-a11y": "^1.0.0-alpha.6",
+    "@netlify/plugin-lighthouse": "^2.1.2",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^2.0.1",
