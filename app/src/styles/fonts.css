@@ -1,21 +1,21 @@
 @font-face {
-  font-family: "Zacoalt";
+  font-family: 'Zacoalt';
   font-weight: 400;
   font-style: normal;
   font-display: auto;
   unicode-range: U+000-5FF;
-  src: local("Zacoalt"), url("/fonts/Zacoalt.ttf") format("truetype");
+  src: local('Zacoalt'), url('/fonts/Zacoalt.ttf') format('truetype');
 }
 @font-face {
-  font-family: "Alliance No.1";
+  font-family: 'Alliance No.1';
   font-weight: 400;
   font-style: normal;
   font-display: auto;
   unicode-range: U+000-5FF;
-  src: local("Alliance No.1"), url("/fonts/Alliance No.1 Light.otf") format("truetype");
+  src: local('Alliance No.1'), url('/fonts/Alliance No.1 Light.otf') format('truetype');
 }
 * {
-  font-family: "Zacoalt", Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Zacoalt', Avenir, Helvetica, Arial, sans-serif;
   line-height: 1;
 }
 

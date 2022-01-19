@@ -34,7 +34,7 @@ html {
 .btn {
   @apply bg-[var(--red)] border-1 border-solid border-[var(--background)] rounded-[11px]
   text-[aliceblue] text-lg h-10 w-24 font-sans;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .icon-btn {
