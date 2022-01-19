@@ -3,8 +3,14 @@
   NODE_VERSION = "14.8.1"
 
 [build]
+  base="app/"
   publish = "dist"
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm build"
+
+[[plugins]]
+  package = "@netlify/plugin-a11y"
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
 
 [[redirects]]
   from = "/*"
