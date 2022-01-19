@@ -12,9 +12,7 @@
     </div>
     <router-view />
     <div>
-      <button class="btn m-3 text-sm mt-8" @click="router.back()">
-        {{ t('Back') }}
-      </button>
+      <button class="btn m-3 text-sm mt-8 font-sans" @click="router.back()"> Retour </button>
     </div>
   </main>
 </template>

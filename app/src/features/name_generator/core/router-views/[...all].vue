@@ -9,7 +9,5 @@ meta:
 </script>
 
 <template>
-  <div>
-    {{ t('Not found') }}
-  </div>
+  <div w:font="sans"> Page introuvable </div>
 </template>

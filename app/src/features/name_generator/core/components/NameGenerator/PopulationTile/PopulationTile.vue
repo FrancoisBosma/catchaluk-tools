@@ -82,7 +82,7 @@
         <button
           v-for="(critValue, index2) in critValues"
           :key="index2"
-          class="btn font-sans"
+          class="btn hover:(text-[120%] border-2)"
           :style="{ cursor: isCarouselMoving ? 'inherit' : 'pointer' }"
           @click.stop="generationTriggerCallback(populationName, critName, critValue)"
         >
