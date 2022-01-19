@@ -38,7 +38,7 @@ html {
 }
 
 .icon-btn {
-  @apply relative text-[var(--green)] animate-bounce;
+  @apply text-[var(--green)];
 }
 
 .ext-link {
