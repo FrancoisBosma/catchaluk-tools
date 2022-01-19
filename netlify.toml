@@ -8,9 +8,9 @@
   command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm build"
 
 [[plugins]]
-  package = "@netlify/plugin-a11y"
+  package = "netlify-plugin-a11y"
 [[plugins]]
-  package = "@netlify/plugin-lighthouse"
+  package = "netlify-plugin-lighthouse"
 
 [[redirects]]
   from = "/*"
