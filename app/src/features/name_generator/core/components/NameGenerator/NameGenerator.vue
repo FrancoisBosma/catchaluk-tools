@@ -182,7 +182,7 @@
         :is-carousel-moving="isCarouselMoving"
       />
       <template #viewport>
-        <div class="flicking-pagination bottom-0"></div>
+        <div class="flicking-pagination"></div>
       </template>
     </Flicking>
     <div v-show="!isCarouselMoving" w:w="full" w:position="absolute" w:bottom="[calc(50%+10px)]">
@@ -236,6 +236,7 @@
   }
 
   .flicking-pagination {
+    bottom: 0;
     z-index: 0;
   }
 

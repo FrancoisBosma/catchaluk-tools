@@ -114,7 +114,7 @@
     --popper-theme-background-color: var(--foreground);
     --popper-theme-background-color-hover: var(--foreground);
     --popper-theme-text-color: aliceblue;
-    --popper-theme-border-width: 0;
+    --popper-theme-border-width: 0px;
     --popper-theme-border-style: solid;
     --popper-theme-border-radius: 6px;
     --popper-theme-padding: 32px;
