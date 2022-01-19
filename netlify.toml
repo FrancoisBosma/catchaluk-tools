@@ -1,6 +1,6 @@
 [build.environment]
   NPM_FLAGS = "--prefix=/dev/null"
-  NODE_VERSION = "14.8.1"
+  NODE_VERSION = "14"
 
 [build]
   base="app/"
