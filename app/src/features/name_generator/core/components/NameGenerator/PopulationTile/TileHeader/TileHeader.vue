@@ -50,7 +50,7 @@
           />
         </span>
         <template #content>
-          <div w:w="max max-[20vw]" w:text="left" w:font="all:sans" w:z="2">
+          <div w:w="max max-[50vw] sm:max-[20vw]" w:text="left" w:font="all:sans" w:z="2">
             <span v-if="populationName === 'Atlec'">
               Les atlecs sont le seul peuple à faire une usage courant du noms de famille
             </span>
