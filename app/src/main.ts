@@ -8,10 +8,10 @@ import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
 
+import App from '@SRC/App.vue'
 // register vue composition api globally
 import { ViteSSG } from 'vite-ssg'
 import { routes } from '@SRC/router'
-import App from '@SRC/App.vue'
 
 // https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(App, { routes }, (ctx) => {

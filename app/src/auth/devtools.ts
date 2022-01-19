@@ -1,7 +1,7 @@
 import type { App } from '@vue/devtools-api'
+import type { AuthPlugin } from './types'
 import { setupDevtoolsPlugin } from '@vue/devtools-api'
 import { watch } from 'vue'
-import type { AuthPlugin } from './types'
 
 const stateType = 'Auth Plugin'
 

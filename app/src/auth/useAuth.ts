@@ -1,5 +1,5 @@
-import { authInstance } from './plugin'
 import type { AuthPlugin } from './types'
+import { authInstance } from './plugin'
 
 /**
  * Returns the auth instance. Equivalent to using `$auth` inside

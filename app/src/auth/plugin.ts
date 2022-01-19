@@ -1,10 +1,11 @@
-import type { App } from 'vue'
+import type { AuthOptions, AuthPlugin, RequiredAuthOptions, User } from '@SRC/auth/types'
 import { computed, reactive, readonly, ref } from 'vue'
-import { setupDevtools } from '@SRC/auth/devtools'
+
+import { ANONYMOUS_USER } from '@SRC/auth/types'
+import type { App } from 'vue'
 import { configureAuthorizationHeaderInterceptor } from '@SRC/auth/interceptors'
 import { configureNavigationGuards } from '@SRC/auth/navigationGuards'
-import type { AuthOptions, AuthPlugin, RequiredAuthOptions, User } from '@SRC/auth/types'
-import { ANONYMOUS_USER } from '@SRC/auth/types'
+import { setupDevtools } from '@SRC/auth/devtools'
 
 // eslint-disable-next-line import/no-mutable-exports
 export let authInstance: AuthPlugin | undefined

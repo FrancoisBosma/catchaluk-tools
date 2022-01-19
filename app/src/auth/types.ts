@@ -1,5 +1,6 @@
-import type { AxiosInstance } from 'axios'
 import type { RouteLocationRaw, RouteRecordName, Router } from 'vue-router'
+
+import type { AxiosInstance } from 'axios'
 
 export interface User {
   id?: string

@@ -1,4 +1,5 @@
 import type { RouteLocationRaw, Router } from 'vue-router'
+
 import type { RequiredAuthOptions } from './types'
 import { useAuth } from './useAuth'
 

@@ -1,7 +1,7 @@
 import type { UserModule } from '@SRC/types'
+import axiosInstance from '@SRC/api/axios'
 import { createAuth } from '@SRC/auth'
 import { router } from '@SRC/router'
-import axiosInstance from '@SRC/api/axios'
 
 export const install: UserModule = ({ app }) => {
   const auth = createAuth({
