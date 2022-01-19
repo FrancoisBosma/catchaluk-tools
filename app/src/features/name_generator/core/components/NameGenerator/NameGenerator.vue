@@ -234,18 +234,21 @@
     overflow-x: clip;
     overflow-y: visible;
   }
+
   .flicking-pagination {
     z-index: 0;
   }
+
   .generated-names {
     @apply text-box;
     @apply children:(font-zacoalt) flex flex-col justify-center h-min-[240px];
+
+    width: min(90%, 386px);
     font-size: x-large;
     background-image: v-bind('textBoxBg');
-    width: min(90%, 386px);
     @screen sm {
-      font-size: xx-large;
       width: max(386px, 50%);
+      font-size: xx-large;
     }
   }
 </style>

@@ -93,14 +93,18 @@
 <style lang="postcss" scoped>
   .title {
     @apply font-zacoalt;
+
     font-size: 30px;
   }
+
   .info-icon {
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 3px rgb(0 0 0 / 50%);
     @apply transition-all duration-200 ease-in;
+
     &:hover,
     &:active {
       @apply transition-all duration-200 ease-out;
+
       transform: rotate(45deg);
     }
   }
@@ -110,10 +114,10 @@
     --popper-theme-background-color: var(--foreground);
     --popper-theme-background-color-hover: var(--foreground);
     --popper-theme-text-color: aliceblue;
-    --popper-theme-border-width: 0px;
+    --popper-theme-border-width: 0;
     --popper-theme-border-style: solid;
     --popper-theme-border-radius: 6px;
     --popper-theme-padding: 32px;
-    --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
+    --popper-theme-box-shadow: 0 6px 30px -6px rgb(0 0 0 / 25%);
   }
 </style>
