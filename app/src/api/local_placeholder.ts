@@ -1,10 +1,21 @@
 import type { Dictionary, NameList } from '@ROOT/src/types'
+// TYPES
+export type SpecialCharSpecs = Dictionary<Dictionary<any>>
+export type PopulationName = Array<{ gender: string; name: string }>
+export type RedirectionLinks = { population: string | string[]; info?: boolean }
+export type PopulationData = {
+  agglomerationTemplates: Dictionary<(n: string) => string>
+  criteria: Dictionary<Array<string>>
+  names: PopulationName
+  nomenclature: { nameSize: { min: number; max: number }; specialChars: SpecialCharSpecs }
+  redirectionLinks: RedirectionLinks
+}
+
 // CONSTANTS
 
 export const APOSTROPHE_CHAR = "'"
 export const DASH_CHAR = '-'
 export const EMPTY_CHAR = ''
-
 export const GENDERS: Dictionary<string> = {
   Female: 'Femme',
   Male: 'Homme',
@@ -14,9 +25,6 @@ export const AGGLOMERATIONS: Dictionary<string> = {
   City: 'Ville',
   Town: 'Village',
 }
-
-export type SpecialCharSpecs = Dictionary<Dictionary<any>>
-
 const DEFAULT_SPECIAL_CHARS: SpecialCharSpecs = {
   [APOSTROPHE_CHAR]: {
     isException: (/* name, charIndex */) => false,
@@ -78,16 +86,6 @@ const objectDeepEnoughCopy = (obj: object) =>
   )
 
 // DATA
-declare type PopulationName = Array<{ gender: string; name: string }>
-export type RedirectionLinks = { population: string | string[]; info?: boolean }
-export type PopulationData = {
-  agglomerationTemplates: Dictionary<(n: string) => string>
-  criteria: Dictionary<Array<string>>
-  names: PopulationName
-  nomenclature: { nameSize: { min: number; max: number }; specialChars: SpecialCharSpecs }
-  redirectionLinks: RedirectionLinks
-}
-
 const rawPopulationBase: Dictionary<PopulationData> = {
   Zacoalt: {
     agglomerationTemplates: {
