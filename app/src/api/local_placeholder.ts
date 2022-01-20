@@ -15,7 +15,9 @@ export const AGGLOMERATIONS: Dictionary<string> = {
   Town: 'Village',
 }
 
-const DEFAULT_SPECIAL_CHARS: Dictionary<Dictionary<any>> = {
+export type SpecialCharSpecs = Dictionary<Dictionary<any>>
+
+const DEFAULT_SPECIAL_CHARS: SpecialCharSpecs = {
   [APOSTROPHE_CHAR]: {
     isException: (/* name, charIndex */) => false,
     minDistFromEdges: 1, // 0 = first/last char
@@ -82,7 +84,7 @@ export type PopulationData = {
   agglomerationTemplates: Dictionary<(n: string) => string>
   criteria: Dictionary<Array<string>>
   names: PopulationName
-  nomenclature: { nameSize: { min: number; max: number }; specialChars: Dictionary<Dictionary<any>> }
+  nomenclature: { nameSize: { min: number; max: number }; specialChars: SpecialCharSpecs }
   redirectionLinks: RedirectionLinks
 }
 
