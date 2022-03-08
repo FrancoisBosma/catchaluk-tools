@@ -813,9 +813,11 @@ const rawPopulationBase: Dictionary<PopulationData> = {
         }, []),
         'Cutchakan&Iktomi'
       )
+      const specialChars = objectDeepEnoughCopy(DEFAULT_SPECIAL_CHARS)
+      specialChars[APOSTROPHE_CHAR].maxAllowed = 0
       return {
         nameSize: { min: minSize, max: maxSize },
-        specialChars: DEFAULT_SPECIAL_CHARS,
+        specialChars,
       }
     },
     redirectionLinks: {
