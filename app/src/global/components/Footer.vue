@@ -6,7 +6,7 @@
       <span>by Francois Bosma</span>
     </div>
     <div class="grid grid-rows-1 grid-cols-[1fr,auto,1fr] gap-3 w-max text-center">
-      <a href="" target="_blank" rel="noopener noreferrer" w:animate="bounce">
+      <a href="https://fbosma.com" target="_blank" rel="noopener noreferrer" w:animate="bounce">
         <fontelico-emo-sunglasses class="icon-btn" />
       </a>
       <a href="https://github.com/FrancoisBosma" target="_blank" rel="noopener noreferrer" w:animate="bounce delay-75">
