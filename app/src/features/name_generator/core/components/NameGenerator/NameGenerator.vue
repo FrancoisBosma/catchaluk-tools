@@ -142,7 +142,7 @@
       nameList.forEach((name, index) => (output[index] = nameEditor(name)))
       return output
     }
-    if (populationName === 'Atlec') {
+    if (populationName === 'Atlec&Aweche') {
       const output: NameList = []
       const familyNames = generateRawNames()
       nameList.forEach((name, index, arr) => (output[index] = `${arr[index]} ${familyNames[index]}`))

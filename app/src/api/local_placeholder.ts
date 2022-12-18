@@ -60,7 +60,7 @@ const getNameSizeLimits = (nameList: NameList, PopulationName: string) => {
   })
   // manual override
   switch (PopulationName) {
-    case 'Atlec':
+    case 'Atlec&Aweche':
       output.minSize = 6
       break
     case 'Zacoalt':
@@ -244,7 +244,7 @@ const rawPopulationBase: Dictionary<PopulationData> = {
       population: 'https://catchaluk.wixsite.com/lejdr/les-zacoalts',
     },
   },
-  Atlec: {
+  'Atlec&Aweche': {
     agglomerationTemplates: {
       City: (n: string) => `${n}'uechan`,
       Town: (n: string) => `${n}'uche`,
@@ -447,7 +447,7 @@ const rawPopulationBase: Dictionary<PopulationData> = {
           acc.push(curr.name)
           return acc
         }, []),
-        'Atlec'
+        'Atlec&Aweche'
       )
       return {
         nameSize: { min: minSize, max: maxSize },
@@ -455,7 +455,10 @@ const rawPopulationBase: Dictionary<PopulationData> = {
       }
     },
     redirectionLinks: {
-      population: 'https://catchaluk.wixsite.com/lejdr/les-atlecs',
+      population: [
+        'https://catchaluk.wixsite.com/lejdr/les-atlecs',
+        'https://catchaluk.wixsite.com/lejdr/copie-de-les-atlecs',
+      ],
       info: true,
     },
   },
