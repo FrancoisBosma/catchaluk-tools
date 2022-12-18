@@ -455,10 +455,7 @@ const rawPopulationBase: Dictionary<PopulationData> = {
       }
     },
     redirectionLinks: {
-      population: [
-        'https://catchaluk.wixsite.com/lejdr/les-atlecs',
-        'https://catchaluk.wixsite.com/lejdr/copie-de-les-atlecs',
-      ],
+      population: ['https://catchaluk.wixsite.com/lejdr/les-atlecs', 'https://catchaluk.wixsite.com/lejdr/les-aweches'],
       info: true,
     },
   },

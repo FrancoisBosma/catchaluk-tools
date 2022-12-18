@@ -51,8 +51,8 @@
         </span>
         <template #content>
           <div w:w="max max-[50vw] sm:max-[20vw]" w:text="left" w:font="all:sans" w:z="2">
-            <span v-if="populationName === 'Atlec'">
-              Les atlecs sont le seul peuple à faire une usage courant du noms de famille
+            <span v-if="populationName === 'Atlec&Aweche'">
+              Les Atlecs sont le seul peuple à faire une usage courant du noms de famille
             </span>
             <span v-else-if="populationName === 'Cutchakan&Iktomi'">
               Bien qu’ayant une culture partiellement différents les Cutchakans et Iktomis utilisent généralement des

@@ -23,7 +23,7 @@
     switch (popName) {
       case 'Akoutlal':
         return `url(${akoutlalPortrait})`
-      case 'Atlec':
+      case 'Atlec&Aweche':
         return `url(${atlecPortrait})`
       case 'Cutchakan&Iktomi':
         return `url(${cutchakan_iktomiPortrait})`
