@@ -40,15 +40,18 @@
   // methods
   const doesNameRespectNomenclature = (name: string): boolean => {
     const { nomenclature } = PopulationBase[selectedCriterium.value.populationName]
+    const { critName, critValue } = selectedCriterium.value
     const { min: minSize, max: maxSize } = nomenclature.nameSize
     if (!(name.length >= minSize && name.length <= maxSize)) {
       return false
     }
     const areSpecialCharsRulesRespected = Object.entries(nomenclature.specialChars).every(([spChar, rules]) => {
       const spCharOccurrences = findAllIndexes(name, spChar)
-      const spCharAmount =
-        spCharOccurrences.length -
-        spCharOccurrences.reduce((acc: number, curr: number) => acc + Number(rules.isException(name, curr)), 0)
+      const spCharExceptionsCount = spCharOccurrences.reduce(
+        (acc: number, curr: number) => acc + Number(rules.isException(name, curr, critName, critValue)),
+        0
+      )
+      const spCharAmount = spCharOccurrences.length - spCharExceptionsCount
       if (spCharAmount > rules.maxAllowed) return false
       const spCharsAreIllPlaced = spCharOccurrences.some(
         (index: number) => index < rules.minDistFromEdges - 1 || index > name.length - rules.minDistFromEdges

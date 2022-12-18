@@ -27,11 +27,15 @@ export const AGGLOMERATIONS: Dictionary<string> = {
 }
 const DEFAULT_SPECIAL_CHARS: SpecialCharSpecs = {
   [APOSTROPHE_CHAR]: {
-    isException: (/* name, charIndex */) => false,
+    isException: (/* name, charIndex, critName, critValue */) => false,
     minDistFromEdges: 1, // 0 = first/last char
     maxAllowed: 1,
   },
-  [DASH_CHAR]: { isException: (/* name, charIndex */) => false, minDistFromEdges: 3, maxAllowed: 1 },
+  [DASH_CHAR]: {
+    isException: (/* name, charIndex, critName, critValue */) => false,
+    minDistFromEdges: 3,
+    maxAllowed: 1,
+  },
 }
 
 // FUNCTIONS
@@ -815,6 +819,10 @@ const rawPopulationBase: Dictionary<PopulationData> = {
       )
       const specialChars = objectDeepEnoughCopy(DEFAULT_SPECIAL_CHARS)
       specialChars[APOSTROPHE_CHAR].maxAllowed = 0
+      specialChars[APOSTROPHE_CHAR].isException = (name: string, charIndex: number, critName: string) => {
+        if (critName !== 'gender') return false
+        return name.indexOf(APOSTROPHE_CHAR) === charIndex
+      }
       return {
         nameSize: { min: minSize, max: maxSize },
         specialChars,
